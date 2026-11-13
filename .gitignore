@@ -22,6 +22,7 @@ error_log
 /wp-content/*
 !/wp-content/themes/
 /wp-content/themes/*
+!/wp-content/themes/webchiase/
 !/wp-content/themes/flatsome-child/
 
 .DS_Store

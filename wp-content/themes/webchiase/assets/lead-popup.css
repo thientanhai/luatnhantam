@@ -1,0 +1,20 @@
+#lnt-lead-popup { max-width: 760px; padding: 30px 20px 35px; }
+#lnt-lead-popup .lnt-lead-title { text-align: center; text-transform: uppercase; color: #0b3a6b; font-size: 1.9em; margin-bottom: .5em; }
+#lnt-lead-popup .lnt-lead-desc { text-align: center; font-size: 1.05em; margin-bottom: 1em; }
+#lnt-lead-popup .lnt-lead-line { width: 190px; height: 3px; background: #f2b01e; margin: 0 auto 1.5em; }
+#lnt-lead-popup .wpcf7 form { max-width: 500px; margin: 0 auto; }
+#lnt-lead-popup label { font-size: 1.05em; color: #222; }
+#lnt-lead-popup label .required, #lnt-lead-popup label span.req { color: #d63638; }
+#lnt-lead-popup input[type=text], #lnt-lead-popup input[type=tel], #lnt-lead-popup input[type=email],
+#lnt-lead-popup select, #lnt-lead-popup textarea { border: 1px solid #ccc; border-radius: 2px; box-shadow: none; background: #fff; }
+#lnt-lead-popup textarea { min-height: 150px; }
+#lnt-lead-popup .wpcf7-not-valid-tip, #lnt-lead-popup .lnt-lead-note { color: #d63638; }
+#lnt-lead-popup input[type=submit], #lnt-lead-popup button[type=submit] {
+	background: #f2b01e; color: #222; border: 0; border-radius: 99px; padding: 0 28px; font-weight: 600; text-transform: none; margin: 0;
+}
+#lnt-lead-popup input[type=submit]:hover, #lnt-lead-popup button[type=submit]:hover { background: #d99a10; }
+#lnt-lead-popup .wpcf7-response-output { text-align: center; }
+#lnt-lead-popup label { display: block; margin-bottom: 1em; }
+#lnt-lead-popup .wpcf7-form-control-wrap { display: block; margin-top: 4px; }
+#lnt-lead-popup .lnt-lead-note { font-size: .95em; margin: 0 0 1em; }
+#lnt-lead-popup .wpcf7-spinner { display: block; margin: 8px auto 0; }
