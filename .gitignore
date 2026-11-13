@@ -1,0 +1,28 @@
+# Secrets / local config
+.vscode/sftp.json
+wp-config.php
+.user.ini
+php.ini
+.htaccess
+
+# Logs
+error_log
+*.log
+
+# WordPress core
+/wp-admin/
+/wp-includes/
+/*.php
+!/index.php
+/license.txt
+/readme.html
+/.well-known/
+
+# wp-content: only track the child theme
+/wp-content/*
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/flatsome-child/
+
+.DS_Store
+node_modules/
