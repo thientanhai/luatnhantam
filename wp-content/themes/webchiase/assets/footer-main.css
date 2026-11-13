@@ -7,7 +7,7 @@
 
 /* Footer */
 .lnt-footer { background: #043b72; color: #fff; padding: 46px 20px 26px; font-size: 16px; line-height: 1.55; }
-.lnt-footer__inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 46px; }
+.lnt-footer__inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr .8fr 1.6fr; gap: 46px; }
 .lnt-footer a { color: inherit; text-decoration: none; transition: color .2s; }
 .lnt-footer a:hover { color: #f2b01e; }
 .lnt-footer__title { margin: 0 0 14px; font-size: 20px; font-weight: 500; color: #fff; text-transform: none; }
@@ -33,11 +33,15 @@
 
 /* Map + Fanpage */
 .lnt-footer__embeds { max-width: 1160px; margin: 36px auto 0; display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
-.lnt-embed { border-radius: 6px; overflow: hidden; background: rgba(255,255,255,.08); min-height: 300px; }
-.lnt-embed iframe { display: block; width: 100%; height: 300px; border: 0; }
-.lnt-embed--fb { display: flex; justify-content: center; align-items: center; background: transparent; min-height: 0; }
-.lnt-embed--fb iframe { height: 150px; }
+.lnt-embed { border-radius: 6px; overflow: hidden; background: rgba(255,255,255,.08); min-height: 380px; }
+.lnt-embed iframe { display: block; width: 100%; height: 380px; border: 0; }
+.lnt-embed--fb { display: flex; justify-content: center; align-items: flex-start; background: transparent; }
+.lnt-embed--fb iframe { height: 380px; }
 .lnt-embed--fb iframe { max-width: 340px; }
 @media (max-width: 849px) {
 	.lnt-footer__embeds { grid-template-columns: 1fr; }
 }
+
+.lnt-footer__links--cols { columns: 2; column-gap: 32px; }
+.lnt-footer__links--cols li { break-inside: avoid; }
+@media (max-width: 549px) { .lnt-footer__links--cols { columns: 1; } }

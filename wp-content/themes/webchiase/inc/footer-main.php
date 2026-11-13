@@ -41,10 +41,10 @@ function lnt_footer_menu_links() {
 	return $out;
 }
 
-/** Chuyên mục có sẵn của site. */
+/** Tất cả chuyên mục có bài viết (mọi cấp), bỏ "Chưa phân loại". */
 function lnt_footer_category_links() {
 	$out  = array();
-	$cats = get_categories( array( 'parent' => 0, 'hide_empty' => false, 'number' => 8, 'orderby' => 'name' ) );
+	$cats = get_categories( array( 'hide_empty' => true, 'orderby' => 'name', 'order' => 'ASC' ) );
 	foreach ( $cats as $cat ) {
 		if ( 'uncategorized' === $cat->slug ) {
 			continue;
@@ -54,8 +54,8 @@ function lnt_footer_category_links() {
 	return $out;
 }
 
-function lnt_footer_links_html( $links ) {
-	echo '<ul class="lnt-footer__links">';
+function lnt_footer_links_html( $links, $extra_class = '' ) {
+	echo '<ul class="lnt-footer__links ' . esc_attr( $extra_class ) . '">';
 	foreach ( $links as $l ) {
 		echo '<li><a href="' . esc_url( $l[1] ) . '">' . esc_html( $l[0] ) . '</a></li>';
 	}
@@ -69,7 +69,7 @@ function lnt_footer_render() {
 	// Ảnh nền banner: ảnh có sẵn trong Media; đổi bằng filter 'lnt_footer_banner'.
 	// Bản đồ nhúng theo địa chỉ. Muốn dùng map cũ: filter 'lnt_footer_map_src' trả về src của iframe Google Maps.
 	$map_src = apply_filters( 'lnt_footer_map_src', 'https://maps.google.com/maps?q=' . rawurlencode( $c['address'] ) . '&hl=vi&z=16&output=embed' );
-	$fb_src  = 'https://www.facebook.com/plugins/page.php?href=' . rawurlencode( $c['facebook'] ) . '&tabs&width=340&height=150&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true';
+	$fb_src  = 'https://www.facebook.com/plugins/page.php?href=' . rawurlencode( $c['facebook'] ) . '&tabs=line&width=340&height=380&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true';
 	$bg  = apply_filters( 'lnt_footer_banner', content_url( '/uploads/2025/10/van-phong-cong-ty-luat-nhan-tam.jpg' ) );
 	?>
 	<section class="lnt-cta" style="--lnt-cta-bg: url('<?php echo esc_url( $bg ); ?>');">
@@ -108,7 +108,7 @@ function lnt_footer_render() {
 				?>
 				<div class="lnt-footer__col">
 					<h3 class="lnt-footer__title">Chuyên mục</h3>
-					<?php lnt_footer_links_html( $cats ); ?>
+					<?php lnt_footer_links_html( $cats, 'lnt-footer__links--cols' ); ?>
 				</div>
 			<?php endif; ?>
 		</div>
